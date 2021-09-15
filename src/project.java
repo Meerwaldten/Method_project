@@ -8,9 +8,9 @@ public class project {
         //System.out.println(isNumberPositive(10)); // Task 2
         //middleCharOfString("Hej med dig"); // task 3
         //System.out.println(areaOfTriangle(10,15,20)); // task 4
-        //passwordStrength("hejsecretmeddig"); // Task 5
-        printNumbers(15); // Task 6
-        printNumbers(5); // Task 6
+        passwordStrength("Hejh!ejhej"); // Task 5
+        //printNumbers(15); // Task 6
+        //printNumbers(5); // Task 6
 
     }
 
@@ -27,19 +27,26 @@ public class project {
 
 
 
-    public static boolean passwordStrength (String password){
+    public static void passwordStrength (String password){
         //System.out.println(" Please type in your new password. There is a few parameters you need to fulfill.\n Your password must be at least 8 characters long.\n consist of only letters and digits.\n cannot contain the word 'secret' or start with a dash.");
-        password.equalsIgnoreCase(password); //Er nok ikke nødvendig egentlig, men satte den ind for god ordens skyld.
+        //password.equalsIgnoreCase(password); //Er nok ikke nødvendig egentlig, men satte den ind for god ordens skyld.
         int length = password.length();
-        char[] passwordAsArray = password.toCharArray();
+        //boolean passwordCheck = true;
+        //char [] passwordAsArray = password.toCharArray();
         if (length >= 8){
             if (!password.contains("secret")){
-                if (passwordAsArray[0]!=('-')){
-                    for (int i = 0; i < length; i++){
-                        if (Character.isLetterOrDigit(passwordAsArray[i])) {
-                            System.out.println("Nice password!");
-                            return true;
+                if (password.charAt(0)!=('-')){
+                    for (int i = 0; i < password.length(); i++){
+                        char x = password.charAt(i);
+                        if (Character.isLetterOrDigit(x)) {
+                            continue;
+
+
                         }
+                        else     {System.out.println("Nice password!");
+                                //return true;
+                        }
+
                     }
 
                 }
@@ -49,15 +56,15 @@ public class project {
             }
             else {
                 System.out.println("Your password cannot contain 'Secret'.");
-                return false;
+                //return false;
             }
 
         }
         else {
             System.out.println("Your password is too short");
-            return false;
+            //return false;
         }
-    return false;
+    //return false;
     }
 
 
