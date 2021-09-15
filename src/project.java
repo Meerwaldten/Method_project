@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class project {
@@ -7,13 +8,48 @@ public class project {
         //System.out.println(isNumberPositive(10)); // Task 2
         //middleCharOfString("Hej med dig"); // task 3
         //System.out.println(areaOfTriangle(10,15,20)); // task 4
-
+        //passwordStrength("hejsecretmeddig"); // Task 5
 
 
     }
 
 
 
+
+
+
+    public static boolean passwordStrength (String password){
+        //System.out.println(" Please type in your new password. There is a few parameters you need to fulfill.\n Your password must be at least 8 characters long.\n consist of only letters and digits.\n cannot contain the word 'secret' or start with a dash.");
+        password.equalsIgnoreCase(password);
+        int length = password.length();
+        char[] passwordAsArray = password.toCharArray();
+        if (length >= 8){
+            if (!password.contains("secret")){
+                if (passwordAsArray[0]!=('-')){
+                    for (int i = 0; i < length; i++){
+                        if (Character.isLetterOrDigit(passwordAsArray[i])) {
+                            System.out.println("Nice password!");
+                            return true;
+                        }
+                    }
+
+                }
+                else {
+                    System.out.println("Your password cannot start with a dash.");
+                }
+            }
+            else {
+                System.out.println("Your password cannot contain 'Secret'.");
+                return false;
+            }
+
+        }
+        else {
+            System.out.println("Your password is too short");
+            return false;
+        }
+    return false;
+    }
 
 
     public static double areaOfTriangle (double a, double b, double c){
