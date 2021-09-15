@@ -8,7 +8,7 @@ public class project {
         //System.out.println(isNumberPositive(10)); // Task 2
         //middleCharOfString("Hej med dig"); // task 3
         //System.out.println(areaOfTriangle(10,15,20)); // task 4
-        passwordStrength("Hejh!ejhej"); // Task 5
+        //System.out.println(passwordStrength("Hejhejhej")); // Task 5
         //printNumbers(15); // Task 6
         //printNumbers(5); // Task 6
 
@@ -16,8 +16,8 @@ public class project {
 
 
     public static String printNumbers (int number){
-        int maxium = number;
-            for( int i = 1; i <= maxium; i++){
+        int maximum = number;
+            for( int i = 1; i <= maximum; i++){
                 //System.out.printf("[%s]", i); // formateret til at se cleanere ud.
                 System.out.printf("["+i+"]"); // original og lidt ikke så clean.
             }
@@ -27,45 +27,43 @@ public class project {
 
 
 
-    public static void passwordStrength (String password){
-        //System.out.println(" Please type in your new password. There is a few parameters you need to fulfill.\n Your password must be at least 8 characters long.\n consist of only letters and digits.\n cannot contain the word 'secret' or start with a dash.");
-        //password.equalsIgnoreCase(password); //Er nok ikke nødvendig egentlig, men satte den ind for god ordens skyld.
-        int length = password.length();
-        //boolean passwordCheck = true;
-        //char [] passwordAsArray = password.toCharArray();
-        if (length >= 8){
-            if (!password.contains("secret")){
-                if (password.charAt(0)!=('-')){
-                    for (int i = 0; i < password.length(); i++){
-                        char x = password.charAt(i);
-                        if (Character.isLetterOrDigit(x)) {
-                            continue;
+    public static boolean passwordStrength (String password) {
 
-
-                        }
-                        else     {System.out.println("Nice password!");
-                                //return true;
-                        }
-
-                    }
-
-                }
-                else {
-                    System.out.println("Your password cannot start with a dash.");
-                }
-            }
-            else {
-                System.out.println("Your password cannot contain 'Secret'.");
-                //return false;
-            }
-
+        /* //
+        if (password.length() < 8) {
+            return false;
         }
-        else {
-            System.out.println("Your password is too short");
-            //return false;
+        if (password.contains("secret")) {
+            return false;
         }
-    //return false;
+        if (password.charAt(0) == ('-')) {
+            return false;
+        }
+
+         */ //Original / "lang" koding af efterfølgende linjer.
+
+        if (password.length() < 8 || password.contains("secret") || password.charAt(0) == ('-')){
+            System.out.println("Password doesn't fit criteria.");
+            return false;
+        }
+
+        for (int i = 0; i < password.length(); i++) {
+            char x = password.charAt(i);
+            if (!Character.isLetterOrDigit(x)) {
+                System.out.println("Password doesn't fit criteria.");
+                return false;
+            }
+        }
+        System.out.println("Stronk password!");
+        return true;
+
+
     }
+
+
+
+
+
 
 
     public static double areaOfTriangle (double a, double b, double c){
