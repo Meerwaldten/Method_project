@@ -9,18 +9,27 @@ public class project {
         //middleCharOfString("Hej med dig"); // task 3
         //System.out.println(areaOfTriangle(10,15,20)); // task 4
         //passwordStrength("hejsecretmeddig"); // Task 5
-
+        printNumbers(15); // Task 6
+        printNumbers(5); // Task 6
 
     }
 
 
-
+    public static String printNumbers (int number){
+        int maxium = number;
+            for( int i = 1; i <= maxium; i++){
+                //System.out.printf("[%s]", i); // formateret til at se cleanere ud.
+                System.out.printf("["+i+"]"); // original og lidt ikke så clean.
+            }
+        System.out.println();
+            return "Hej";
+    }
 
 
 
     public static boolean passwordStrength (String password){
         //System.out.println(" Please type in your new password. There is a few parameters you need to fulfill.\n Your password must be at least 8 characters long.\n consist of only letters and digits.\n cannot contain the word 'secret' or start with a dash.");
-        password.equalsIgnoreCase(password);
+        password.equalsIgnoreCase(password); //Er nok ikke nødvendig egentlig, men satte den ind for god ordens skyld.
         int length = password.length();
         char[] passwordAsArray = password.toCharArray();
         if (length >= 8){
