@@ -8,7 +8,7 @@ public class project {
         //System.out.println(isNumberPositive(10)); // Task 2
         //middleCharOfString("Hej med dig"); // task 3
         //System.out.println(areaOfTriangle(10,15,20)); // task 4
-        //System.out.println(passwordStrength("Hejhejhej")); // Task 5
+        System.out.println(passwordStrength("esjhej")); // Task 5
         //printNumbers(15); // Task 6
         //printNumbers(5); // Task 6
 
@@ -29,28 +29,29 @@ public class project {
 
     public static boolean passwordStrength (String password) {
 
-        /* //
         if (password.length() < 8) {
+            System.out.println("Password too short.");
             return false;
         }
-        if (password.contains("secret")) {
+        else if (password.contains("secret")) {
+            System.out.println("Password can't contain 'secret'.");
             return false;
         }
-        if (password.charAt(0) == ('-')) {
+        else if (password.charAt(0) == ('-')) {
+            System.out.println("Password cannot start with a '-'.");
             return false;
         }
-
-         */ //Original / "lang" koding af efterfølgende linjer.
-
-        if (password.length() < 8 || password.contains("secret") || password.charAt(0) == ('-')){
+        /*
+        if (password.length() < 8 && password.contains("secret") && !(password.charAt(0) == ('-'))){
             System.out.println("Password doesn't fit criteria.");
-            return false;
+            return false; //Forsøg på at forkorte kode og bruge mindre linjer, men kunne ikke helt få det til at virke efter hensigten :)
         }
+         */
 
         for (int i = 0; i < password.length(); i++) {
             char x = password.charAt(i);
             if (!Character.isLetterOrDigit(x)) {
-                System.out.println("Password doesn't fit criteria.");
+                System.out.println("Password has a sign that's not a letter or number.");
                 return false;
             }
         }
