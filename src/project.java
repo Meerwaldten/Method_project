@@ -4,13 +4,14 @@ import java.util.Scanner;
 public class project {
     public static void main(String[] args) {
 
-        //findSmallestNumber(); // Task 1
-        //System.out.println(isNumberPositive(10)); // Task 2
-        //middleCharOfString("Hej med dig"); // task 3
-        //System.out.println(areaOfTriangle(10,15,20)); // task 4
-        System.out.println(passwordStrength("heeascret")); // Task 5
-        //printNumbers(15); // Task 6
-        //printNumbers(5); // Task 6
+        findSmallestNumber(); // Task 1
+        System.out.println(isNumberPositive(10)); // Task 2
+        middleCharOfString("Hej med dig"); // task 3
+        System.out.println(areaOfTriangle(10,15,20)); // task 4
+        System.out.println(passwordStrength("heeascret"));// Task 5
+        System.out.println(passwordStrength("hejsecretbenjamin")); // Task 5
+        printNumbers(15); // Task 6
+        printNumbers(5); // Task 6
 
     }
 
@@ -93,7 +94,7 @@ public class project {
 
     public static String isNumberPositive(int tal){
         //Scanner scanner = new Scanner(System.in);
-        System.out.println("Type in a number to see if it's positive, negative or ZERO.");
+        //System.out.println("Type in a number to see if it's positive, negative or ZERO.");
         int num = tal;
         if(num>0){
             return "Your number is positive.";
